@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import * as pdfjsLib from 'pdfjs-dist'
+
 ;(async function () {
   async function extractDataFromPDF(filePath: string) {
     const dataBuffer = fs.readFileSync(filePath)
@@ -7,9 +8,19 @@ import * as pdfjsLib from 'pdfjs-dist'
     const loadingTask = pdfjsLib.getDocument({ data: uint8Array })
     const pdf = await loadingTask.promise
 
+    const disciplinasConhecidas = [
+      'Língua Portuguesa',
+      'Educação Física',
+      'Língua Inglesa',
+      'Arte',
+      'Matemática',
+      'Ciências',
+      'Geografia',
+      'História',
+      'Ensino Religioso',
+    ]
     let disciplinas: { disciplina: string; secoes: string[] }[] = []
     let disciplinaAtual = ''
-    const reDisciplina = /^[A-Z][a-z]+( [A-Z][a-z]+)*$/
     const reSecao =
       /PRÁTICAS DE LINGUAGEM|CAMPOS DE ATUAÇÃO|OBJETOS DE CONHECIMENTO|HABILIDADES PE/g
 
@@ -19,10 +30,10 @@ import * as pdfjsLib from 'pdfjs-dist'
       const textItems = textContent.items.map((item) => item.str)
 
       textItems.forEach((linha) => {
-        if (reDisciplina.test(linha)) {
+        if (disciplinasConhecidas.includes(linha)) {
           disciplinaAtual = linha
           disciplinas.push({ disciplina: disciplinaAtual, secoes: [] })
-        } else if (reSecao.test(linha)) {
+        } else if (reSecao.test(linha) && disciplinaAtual) {
           let index = disciplinas.findIndex(
             (d) => d.disciplina === disciplinaAtual,
           )
