@@ -1,0 +1,38 @@
+{
+  "name": "curriculo-de-pernambuco",
+  "version": "0.0.1",
+  "description": "Este sistema único em TypeScript utiliza tecnologia de ponta para analisar e extrair informações cruciais de documentos PDF, transformando a maneira como educadores acessam e organizam conteúdos curriculares. Ideal para professores e administradores escolares",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tsx watch src/index.ts"
+  },
+  "keywords": [],
+  "author": "Hermes Alves <hermes@softagon.com.br>",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@types/node": "^20.9.0",
+    "async": "^3.2.5",
+    "axios": "^1.6.2",
+    "cheerio": "1.0.0-rc.12",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "fs": "0.0.1-security",
+    "pdf-parse": "^1.1.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@cyclonedx/bom": "^4.0.3",
+    "@types/async": "^3.2.23",
+    "@types/node": "^20.4.8",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.1.0",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.1.2",
+    "typescript": "^5.1.6"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}
