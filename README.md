@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este projeto TypeScript extrai automaticamente os títulos das disciplinas e seções específicas do PDF "Currículo de Pernambuco - Ensino Fundamental". Utiliza a biblioteca `pdf-parse` para processar o texto e identificar padrões correspondentes às disciplinas e suas seções.
+Este projeto TypeScript extrai automaticamente os títulos das disciplinas e seções específicas do PDF "Currículo de Pernambuco - Ensino Fundamental". Utiliza a biblioteca `pdfjs-dist` para processar o texto e identificar padrões correspondentes às disciplinas e suas seções.
 
 ## Instalação
 
